@@ -1,0 +1,17 @@
+<a href="{{ path('create_product') }}">Create Product</a>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Category</th>
+    </tr>
+{% for product in products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.category.name }}</td>
+    </tr>
+{% endfor %}
+</table>

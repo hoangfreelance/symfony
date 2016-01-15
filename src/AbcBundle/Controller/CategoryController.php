@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class CategoryController extends Controller {
     
     /**
-     * @Route("/category/create")
+     * @Route("/category/create", name="create_category")
      */
     public function createAction(Request $request)
     {
@@ -37,6 +37,6 @@ class CategoryController extends Controller {
      */
     public function listAction()
     {
-        die("Danh sach category");
+        return $this->render('AbcBundle:Category:index.html.twig');
     }
 }

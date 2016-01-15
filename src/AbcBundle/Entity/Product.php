@@ -3,6 +3,7 @@
 namespace AbcBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Product
@@ -25,6 +26,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -32,6 +34,7 @@ class Product
      * @var string
      *
      * @ORM\Column(name="price", type="decimal")
+     * @Assert\NotBlank()
      */
     private $price;
 
@@ -45,6 +48,7 @@ class Product
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @Assert\NotBlank()
      */
     private $category;
     
